@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pr17"
         mc:Ignorable="d"
+        Style="{StaticResource ResourceKey= BColor}"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="Authorization">
+        <StackPanel>
+            <StackPanel>
+                <TextBlock Text="Авторизация" Style="{StaticResource TBStyle}"/>
+            </StackPanel>
+            <StackPanel>
+                <GroupBox Header="Введите логин">
+                    <TextBox Name="Login" Text="admin"/>
+
+                </GroupBox>
+                <GroupBox Header="Введите пароль">
+                    <PasswordBox Name="Password" Password="admin"/>
+
+                </GroupBox>
+            </StackPanel>
+            <Button Name="btn_In"  Content="Авторизоваться"  Click="btn_In_Click" Style="{StaticResource btnstyle1}"/>
+            <Button x:Name="BtnGetCode" Visibility="Collapsed" Content="Получить новый код"  Style="{StaticResource btnstyle1}" Click="BtnGetCode_Click" Cursor="Hand"/>
+            <TextBlock x:Name="tbNewCode" Text="Получить новый код можно будет через 60 секунд" FontSize="18" TextWrapping="Wrap" Visibility="Collapsed" Style="{StaticResource TBStyle}" />
+        </StackPanel>
     </Grid>
 </Window>
